@@ -1,0 +1,58 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Footer from '@/components/navigation/Footer.astro';
+import ArrowLink from '@/components/ui/ArrowLink.astro';
+import ProjectVisual from '@/components/ui/ProjectVisual.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project },
+  }));
+}
+
+interface Props { project: CollectionEntry<'projects'>; }
+const { project } = Astro.props;
+const { Content } = await render(project);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={`${project.data.title} — PLAYFORM Work`}
+  description={project.data.description}
+  image={null}
+>
+  <article class="detail-page detail-page--project">
+    <header class="detail-hero detail-hero--project">
+      <div class="detail-hero__topline">
+        <a href={`${base}work/`}>← All work</a>
+        <p>{project.data.year} / {project.data.client}</p>
+      </div>
+      <h1>{project.data.title}</h1>
+      <p class="detail-hero__lead">{project.data.description}</p>
+    </header>
+
+    <div class="case-visual">
+      <ProjectVisual visual={project.data.visual} tone={project.data.tone} title={project.data.title} index="PLAYFORM / WORK" />
+    </div>
+
+    <div class="case-body section-pad">
+      <div class="case-body__copy"><Content /></div>
+      <dl>
+        <div><dt>Client</dt><dd>{project.data.client}</dd></div>
+        <div><dt>Services</dt><dd>{project.data.services.join(' / ')}</dd></div>
+        <div><dt>Technology</dt><dd>{project.data.technologies.join(' / ')}</dd></div>
+        <div><dt>Year</dt><dd>{project.data.year}</dd></div>
+      </dl>
+    </div>
+
+    <section class="detail-cta section-pad">
+      <p class="eyebrow">Next interaction</p>
+      <h2>Let’s make something people remember using.</h2>
+      <ArrowLink href={`${base}#contact`} label="Start a project" />
+    </section>
+  </article>
+  <Footer />
+</BaseLayout>

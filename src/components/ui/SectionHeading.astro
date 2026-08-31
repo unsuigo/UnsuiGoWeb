@@ -1,0 +1,16 @@
+---
+interface Props {
+  index: string;
+  label: string;
+  title?: string;
+  tone?: 'dark' | 'light';
+  headingId?: string;
+}
+
+const { index, label, title, tone = 'dark', headingId } = Astro.props;
+---
+
+<header class:list={['section-heading', `section-heading--${tone}`]}>
+  <p class="section-heading__label"><span>{index}</span>{label}</p>
+  {title && <h2 id={headingId}>{title}</h2>}
+</header>

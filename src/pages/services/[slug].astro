@@ -1,0 +1,56 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Footer from '@/components/navigation/Footer.astro';
+import ArrowLink from '@/components/ui/ArrowLink.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.data.slug },
+    props: { service },
+  }));
+}
+
+interface Props { service: CollectionEntry<'services'>; }
+const { service } = Astro.props;
+const { Content } = await render(service);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={`${service.data.title} — PLAYFORM`}
+  description={service.data.description}
+  image={null}
+>
+  <article class="detail-page detail-page--service">
+    <header class="detail-hero">
+      <div class="detail-hero__topline">
+        <a href={`${base}services/`}>← All services</a>
+        <p>{service.data.category} / PLAYFORM</p>
+      </div>
+      <h1>{service.data.title}</h1>
+      <p class="detail-hero__lead">{service.data.description}</p>
+      <div class="detail-hero__object" aria-hidden="true"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="detail-body section-pad">
+      <div class="detail-body__copy"><Content /></div>
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <ul class="detail-list">
+          {service.data.capabilities.map((capability, index) => (
+            <li><span>0{index + 1}</span>{capability}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="detail-cta section-pad">
+      <p class="eyebrow">Make it real</p>
+      <h2>Have a {service.data.shortTitle.toLowerCase()} project in mind?</h2>
+      <ArrowLink href={`${base}#contact`} label="Talk to PLAYFORM" />
+    </section>
+  </article>
+  <Footer />
+</BaseLayout>

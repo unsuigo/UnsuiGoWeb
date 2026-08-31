@@ -1,0 +1,19 @@
+---
+interface Props {
+  visual: 'orbit' | 'field' | 'signal';
+  tone: 'orange' | 'blue' | 'paper';
+  title: string;
+  index?: string;
+}
+
+const { visual, tone, title, index = 'PF/01' } = Astro.props;
+---
+
+<div class:list={['project-visual', `project-visual--${visual}`, `project-visual--${tone}`]} aria-label={`${title} project artwork`} role="img">
+  <span class="project-visual__grid" aria-hidden="true"></span>
+  <span class="project-visual__shape project-visual__shape--a" aria-hidden="true"></span>
+  <span class="project-visual__shape project-visual__shape--b" aria-hidden="true"></span>
+  <span class="project-visual__shape project-visual__shape--c" aria-hidden="true"></span>
+  <span class="project-visual__index" aria-hidden="true">{index}</span>
+  <span class="project-visual__word" aria-hidden="true">{title}</span>
+</div>

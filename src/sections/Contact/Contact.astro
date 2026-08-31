@@ -1,0 +1,18 @@
+---
+import { contact, siteSettings } from '@/data/site';
+---
+
+<section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
+  <p class="eyebrow">07 / {contact.eyebrow}</p>
+  <div class="contact-section__body" data-reveal>
+    <h2 id="contact-title">{contact.title}</h2>
+    <a href={`mailto:${siteSettings.email}`}>
+      <span>{contact.linkLabel}</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <div class="contact-section__note">
+    <p>{contact.responseNote}</p>
+    <p>{siteSettings.email}<br />{siteSettings.location}</p>
+  </div>
+</section>

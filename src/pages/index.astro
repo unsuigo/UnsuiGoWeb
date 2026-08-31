@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import Capabilities from '@/sections/Capabilities/Capabilities.astro';
+import Contact from '@/sections/Contact/Contact.astro';
+import Hero from '@/sections/Hero/Hero.astro';
+import Philosophy from '@/sections/Philosophy/Philosophy.astro';
+import Process from '@/sections/Process/Process.astro';
+import Services from '@/sections/Services/Services.astro';
+import Work from '@/sections/Work/Work.astro';
+import Footer from '@/components/navigation/Footer.astro';
+import Reveal from '@/components/effects/Reveal.astro';
+
+const projects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order);
+const services = (await getCollection('services', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout>
+  <Hero />
+  <Work projects={projects} />
+  <Services services={services} />
+  <Capabilities />
+  <Philosophy />
+  <Process />
+  <Contact />
+  <Footer />
+  <Reveal />
+</BaseLayout>

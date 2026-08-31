@@ -1,0 +1,33 @@
+---
+import HeroCanvas from '@/components/effects/HeroCanvas.astro';
+import { hero } from '@/data/site';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__meta">
+    <p>{hero.eyebrow}</p>
+    <p>Est. 2024<br />Europe → Worldwide</p>
+  </div>
+
+  <div class="hero__visual">
+    <HeroCanvas />
+  </div>
+
+  <div class="hero__headline">
+    <p class="hero__kicker">PLAY / FORM</p>
+    <h1 id="hero-title">
+      We build things<br />
+      people <em>interact</em> with.
+    </h1>
+  </div>
+
+  <div class="hero__footer">
+    <ul aria-label="Studio disciplines">
+      {hero.disciplines.map((discipline) => <li>{discipline}</li>)}
+    </ul>
+    <a class="scroll-cue" href="#work">
+      <span>{hero.scrollLabel}</span>
+      <span aria-hidden="true">↓</span>
+    </a>
+  </div>
+</section>

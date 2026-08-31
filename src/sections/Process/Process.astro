@@ -1,0 +1,17 @@
+---
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { process } from '@/data/site';
+---
+
+<section class="process-section section-pad" aria-labelledby="process-title">
+  <SectionHeading index="06" label="Process" title="Move quickly where it helps. Slow down where it matters." headingId="process-title" />
+  <ol class="process-list">
+    {process.map((step, index) => (
+      <li data-reveal>
+        <span class="process-list__index">0{index + 1}</span>
+        <h3>{step.title}</h3>
+        <p>{step.description}</p>
+      </li>
+    ))}
+  </ol>
+</section>
