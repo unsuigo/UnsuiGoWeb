@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ArrowLink from '@/components/ui/ArrowLink.astro';
+import ProjectVisual from '@/components/ui/ProjectVisual.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="work-section section-pad" id="work" aria-labelledby="work-title">
+  <SectionHeading index="02" label="Selected work" title="A few ways we make interaction tangible." tone="light" headingId="work-title" />
+
+  <div class="work-list">
+    {projects.map((project, index) => (
+      <article class="work-item" data-reveal>
+        <a href={`${base}work/${project.data.slug}/`} aria-label={`View ${project.data.title} case study`}>
+          <ProjectVisual
+            visual={project.data.visual}
+            tone={project.data.tone}
+            title={project.data.title}
+            index={`PF/0${index + 1}`}
+          />
+          <div class="work-item__meta">
+            <div>
+              <p>{project.data.client} / {project.data.year}</p>
+              <h3>{project.data.title}</h3>
+            </div>
+            <p class="work-item__description">{project.data.description}</p>
+            <span class="work-item__arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </article>
+    ))}
+  </div>
+
+  <div class="section-action" data-reveal>
+    <ArrowLink href={`${base}work/`} label="View all work" />
+  </div>
+</section>

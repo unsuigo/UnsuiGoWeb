@@ -1,0 +1,19 @@
+---
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { capabilities } from '@/data/site';
+---
+
+<section class="capabilities-section section-pad" aria-labelledby="capabilities-title">
+  <SectionHeading index="04" label="Capabilities" />
+  <div class="capabilities-layout">
+    <h2 id="capabilities-title" data-reveal>Tools change.<br /><em>Good interaction</em> lasts.</h2>
+    <ul>
+      {capabilities.map((capability, index) => (
+        <li data-reveal style={`--item-index: ${index}`}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          {capability}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

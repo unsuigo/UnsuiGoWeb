@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Footer from '@/components/navigation/Footer.astro';
+import ArrowLink from '@/components/ui/ArrowLink.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Services — PLAYFORM Interactive Software Studio"
+  description="Game development, XR, interactive experiences and digital product development by PLAYFORM."
+>
+  <header class="page-hero page-hero--services">
+    <p class="eyebrow">What we build</p>
+    <h1>Software that asks<br />to be <em>touched.</em></h1>
+    <p class="page-hero__intro">From embodied experiences to everyday tools, we bring the same mix of technical clarity and interaction craft.</p>
+  </header>
+
+  <section class="service-index section-pad" aria-label="Services">
+    <ol>
+      {services.map((service, index) => (
+        <li>
+          <a href={`${base}services/${service.data.slug}/`}>
+            <div class="service-index__title">
+              <span>0{index + 1}</span>
+              <h2>{service.data.title}</h2>
+            </div>
+            <p>{service.data.description}</p>
+            <ul aria-label={`${service.data.title} capabilities`}>
+              {service.data.capabilities.slice(0, 3).map((capability) => <li>{capability}</li>)}
+            </ul>
+            <span class="service-index__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+    <ArrowLink href={`${base}#contact`} label="Discuss a project" inverse />
+  </section>
+  <Footer />
+</BaseLayout>

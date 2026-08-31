@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Footer from '@/components/navigation/Footer.astro';
+import ProjectVisual from '@/components/ui/ProjectVisual.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Work — PLAYFORM Interactive Software Studio"
+  description="Selected games, XR experiences, installations and digital products by PLAYFORM."
+>
+  <header class="page-hero page-hero--work">
+    <p class="eyebrow">Selected work</p>
+    <h1>Ideas made<br /><em>interactive.</em></h1>
+    <p class="page-hero__intro">A growing collection of prototypes, products and experiences made to be used—not just looked at.</p>
+  </header>
+
+  <section class="work-index section-pad" aria-label="Project archive">
+    {projects.map((project, index) => (
+      <article>
+        <a href={`${base}work/${project.data.slug}/`}>
+          <ProjectVisual
+            visual={project.data.visual}
+            tone={project.data.tone}
+            title={project.data.title}
+            index={`PF/0${index + 1}`}
+          />
+          <div class="work-index__meta">
+            <span>0{index + 1}</span>
+            <h2>{project.data.title}</h2>
+            <p>{project.data.description}</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+  <Footer />
+</BaseLayout>

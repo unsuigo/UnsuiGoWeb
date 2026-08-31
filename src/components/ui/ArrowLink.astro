@@ -1,0 +1,14 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  inverse?: boolean;
+}
+
+const { href, label, inverse = false } = Astro.props;
+---
+
+<a class:list={['arrow-link', { 'arrow-link--inverse': inverse }]} href={href}>
+  <span>{label}</span>
+  <span class="arrow-link__icon" aria-hidden="true">↗</span>
+</a>

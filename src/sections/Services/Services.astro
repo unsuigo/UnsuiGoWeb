@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+
+interface Props {
+  services: CollectionEntry<'services'>[];
+}
+
+const { services } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="services-section section-pad" id="services" aria-labelledby="services-title">
+  <SectionHeading index="03" label="What we build" title="Different outputs. One obsession with how it feels to use." headingId="services-title" />
+
+  <ol class="service-list">
+    {services.map((service, index) => (
+      <li data-reveal>
+        <a href={`${base}services/${service.data.slug}/`}>
+          <span class="service-list__index">0{index + 1}</span>
+          <h3>{service.data.title}</h3>
+          <p>{service.data.description}</p>
+          <span class="service-list__arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>
