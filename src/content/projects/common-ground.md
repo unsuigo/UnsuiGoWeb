@@ -1,23 +1,25 @@
 ---
-id: project-common-ground
-slug: common-ground
-title: Common Ground
-client: Cultural venue concept
-description: A room-scale installation that turns collective movement into a shared, evolving digital landscape.
+id: project-snake-room-vr
+slug: snake-room-vr
+title: Snake Room VR
+client: VR GAME / META QUEST
+description: A spatial VR arcade game that brings the classic snake mechanic into an immersive 3D environment. Navigate, grow and react using direct VR controls designed for Meta Quest.
 services:
-  - Experience design
-  - Interactive installation
-  - Realtime graphics
+  - UNITY
+  - VR
+  - GAMEPLAY
+  - SPATIAL INTERACTION
 technologies:
   - Unity
-  - Depth sensing
-  - Multichannel output
+  - Meta Quest
+  - VR controls
+heroMedia: /video/SnakeRoomVR.mp4
 gallery: []
 featured: true
-year: 2025
+year: 2026
 order: 2
 visual: field
 tone: blue
 ---
 
-Designed for a public atrium, Common Ground gives every visitor a trace in the same responsive world. Individual gestures matter, but the richest behavior only appears through collaboration.
+A spatial VR arcade game that brings the classic snake mechanic into an immersive 3D environment. Navigate, grow and react using direct VR controls designed for Meta Quest.

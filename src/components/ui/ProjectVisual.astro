@@ -13,7 +13,7 @@ const mediaSrc = media ? `${import.meta.env.BASE_URL}${media.replace(/^\//, '')}
 
 <div class:list={['project-visual', `project-visual--${visual}`, `project-visual--${tone}`, { 'project-visual--media': media }]} aria-label={`${title} project ${media ? 'video' : 'artwork'}`} role="img">
   {mediaSrc && (
-    <video class="project-visual__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <video class="project-visual__video" muted loop playsinline preload="metadata" aria-hidden="true" data-project-video>
       <source src={mediaSrc} type="video/mp4" />
     </video>
   )}
@@ -28,3 +28,48 @@ const mediaSrc = media ? `${import.meta.env.BASE_URL}${media.replace(/^\//, '')}
   <span class="project-visual__index" aria-hidden="true">{index}</span>
   <span class="project-visual__word" aria-hidden="true">{title}</span>
 </div>
+
+<script>
+  const projectVideos = Array.from(document.querySelectorAll<HTMLVideoElement>('[data-project-video]'));
+  const visibleVideos = new Set<HTMLVideoElement>();
+
+  const playVideo = (video: HTMLVideoElement) => {
+    video.muted = true;
+    video.loop = true;
+    void video.play().catch(() => {
+      // Muted inline playback is allowed by modern browsers; safely remain paused if a browser blocks it.
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target as HTMLVideoElement;
+      const shouldPlay = entry.isIntersecting && entry.intersectionRatio >= 0.15 && !document.hidden;
+
+      if (shouldPlay) {
+        visibleVideos.add(video);
+        playVideo(video);
+      } else {
+        visibleVideos.delete(video);
+        video.pause();
+      }
+    });
+  }, { threshold: [0, 0.15, 0.5] });
+
+  projectVideos.forEach((video) => {
+    video.muted = true;
+    video.pause();
+    observer.observe(video);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      projectVideos.forEach((video) => video.pause());
+      return;
+    }
+
+    visibleVideos.forEach(playVideo);
+  });
+
+  document.addEventListener('astro:before-swap', () => observer.disconnect(), { once: true });
+</script>
