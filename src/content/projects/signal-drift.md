@@ -1,17 +1,19 @@
 ---
-id: project-signal-drift
-slug: signal-drift
-title: Signal Drift
-client: Original prototype
-description: A spatial rhythm game where players bend a living signal through an impossible radio landscape.
+id: project-block-booster-vr
+slug: block-booster-vr
+title: Block Booster VR
+client: VR GAME / META QUEST
+description: A fast-paced VR arcade game built around physical interaction and direct controller input. Designed for Meta Quest, with responsive spatial gameplay and immediate visual feedback.
 services:
-  - Game design
-  - Unity development
-  - XR prototyping
+  - UNITY
+  - VR
+  - GAMEPLAY
+  - INTERACTION
 technologies:
   - Unity
-  - OpenXR
-  - Procedural audio
+  - Meta Quest
+  - VR controllers
+heroMedia: /video/block-booster-vr.mp4
 gallery: []
 featured: true
 year: 2026
@@ -20,4 +22,4 @@ visual: signal
 tone: orange
 ---
 
-Signal Drift began with one question: what if music was something you could physically steer? The prototype turns rhythm into an elastic spatial system, rewarding movement rather than button timing.
+A fast-paced VR arcade game built around physical interaction and direct controller input. Designed for Meta Quest, with responsive spatial gameplay and immediate visual feedback.

@@ -4,16 +4,27 @@ interface Props {
   tone: 'orange' | 'blue' | 'paper';
   title: string;
   index?: string;
+  media?: string;
 }
 
-const { visual, tone, title, index = 'PF/01' } = Astro.props;
+const { visual, tone, title, index = 'PF/01', media } = Astro.props;
+const mediaSrc = media ? `${import.meta.env.BASE_URL}${media.replace(/^\//, '')}` : undefined;
 ---
 
-<div class:list={['project-visual', `project-visual--${visual}`, `project-visual--${tone}`]} aria-label={`${title} project artwork`} role="img">
+<div class:list={['project-visual', `project-visual--${visual}`, `project-visual--${tone}`, { 'project-visual--media': media }]} aria-label={`${title} project ${media ? 'video' : 'artwork'}`} role="img">
+  {mediaSrc && (
+    <video class="project-visual__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+      <source src={mediaSrc} type="video/mp4" />
+    </video>
+  )}
   <span class="project-visual__grid" aria-hidden="true"></span>
-  <span class="project-visual__shape project-visual__shape--a" aria-hidden="true"></span>
-  <span class="project-visual__shape project-visual__shape--b" aria-hidden="true"></span>
-  <span class="project-visual__shape project-visual__shape--c" aria-hidden="true"></span>
+  {!media && (
+    <>
+      <span class="project-visual__shape project-visual__shape--a" aria-hidden="true"></span>
+      <span class="project-visual__shape project-visual__shape--b" aria-hidden="true"></span>
+      <span class="project-visual__shape project-visual__shape--c" aria-hidden="true"></span>
+    </>
+  )}
   <span class="project-visual__index" aria-hidden="true">{index}</span>
   <span class="project-visual__word" aria-hidden="true">{title}</span>
 </div>

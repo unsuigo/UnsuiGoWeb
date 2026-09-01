@@ -24,13 +24,17 @@ const base = import.meta.env.BASE_URL;
             tone={project.data.tone}
             title={project.data.title}
             index={`PF/0${index + 1}`}
+            media={project.data.heroMedia}
           />
           <div class="work-item__meta">
             <div>
-              <p>{project.data.client} / {project.data.year}</p>
+              <p>{project.data.heroMedia ? project.data.client : `${project.data.client} / ${project.data.year}`}</p>
               <h3>{project.data.title}</h3>
             </div>
-            <p class="work-item__description">{project.data.description}</p>
+            <div class="work-item__summary">
+              <p class="work-item__description">{project.data.description}</p>
+              {project.data.heroMedia && <p class="work-item__tags">{project.data.services.join(' · ')}</p>}
+            </div>
             <span class="work-item__arrow" aria-hidden="true">↗</span>
           </div>
         </a>
