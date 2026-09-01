@@ -13,7 +13,7 @@ technologies:
   - Realtime APIs
   - WebGL
 gallery: []
-featured: true
+featured: false
 year: 2025
 order: 3
 visual: orbit
