@@ -1,6 +1,6 @@
-# PLAYFORM
+# UnsuiGo
 
-Production-ready static website for PLAYFORM, an interactive software studio working across games, XR, installations and digital products.
+Static portfolio website for UnsuiGo, an independent Unity / XR development studio working across Meta Quest, VR / AR prototypes, existing Unity projects and interactive systems.
 
 ## Local development
 

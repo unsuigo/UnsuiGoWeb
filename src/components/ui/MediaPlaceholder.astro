@@ -1,0 +1,24 @@
+---
+interface Props {
+  kind: 'VIDEO PLACEHOLDER' | 'IMAGE PLACEHOLDER' | 'IMAGE / VIDEO PLACEHOLDER';
+  title: string;
+  aspect?: 'landscape' | 'portrait';
+  decorative?: boolean;
+}
+
+const { kind, title, aspect = 'landscape', decorative = false } = Astro.props;
+---
+
+<div
+  class:list={['media-placeholder', `media-placeholder--${aspect}`]}
+  role={decorative ? undefined : 'img'}
+  aria-label={decorative ? undefined : `${kind}: ${title}. Media to be added.`}
+  aria-hidden={decorative ? 'true' : undefined}
+>
+  <div class="media-placeholder__frame">
+    <span class="media-placeholder__grid" aria-hidden="true"></span>
+    <span class="media-placeholder__kind">{kind}</span>
+    <strong>{title}</strong>
+    <span class="media-placeholder__status">Media to add</span>
+  </div>
+</div>

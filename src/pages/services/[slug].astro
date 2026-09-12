@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title={`${service.data.title} — PLAYFORM`}
+  title={`${service.data.title} — UnsuiGo`}
   description={service.data.description}
   image={null}
 >
@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
     <header class="detail-hero">
       <div class="detail-hero__topline">
         <a href={`${base}services/`}>← All services</a>
-        <p>{service.data.category} / PLAYFORM</p>
+        <p>{service.data.category} / UNSUIGO</p>
       </div>
       <h1>{service.data.title}</h1>
       <p class="detail-hero__lead">{service.data.description}</p>
@@ -49,7 +49,7 @@ const base = import.meta.env.BASE_URL;
     <section class="detail-cta section-pad">
       <p class="eyebrow">Make it real</p>
       <h2>Have a {service.data.shortTitle.toLowerCase()} project in mind?</h2>
-      <ArrowLink href={`${base}#contact`} label="Talk to PLAYFORM" />
+      <ArrowLink href={`${base}#contact`} label="Get in touch" />
     </section>
   </article>
   <Footer />

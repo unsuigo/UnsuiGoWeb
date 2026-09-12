@@ -1,14 +1,15 @@
 ---
-import { philosophy } from '@/data/site';
+import { about } from '@/data/site';
 ---
 
-<section class="philosophy-section section-pad" id="studio" aria-labelledby="philosophy-title">
+<section class="philosophy-section section-pad" id="about" aria-labelledby="philosophy-title">
   <div class="philosophy-section__marker" aria-hidden="true">
-    <span>Idea</span><span>→</span><span>Experience</span>
+    <span>Solo studio</span><span>→</span><span>Direct work</span>
   </div>
   <div class="philosophy-section__content" data-reveal>
-    <p class="eyebrow">05 / {philosophy.label}</p>
-    <h2 id="philosophy-title">{philosophy.title}</h2>
-    <p>{philosophy.body}</p>
+    <p class="eyebrow">07 / {about.label}</p>
+    <h2 id="philosophy-title">{about.title}</h2>
+    <p>{about.body}</p>
+    <p class="philosophy-section__availability">{about.availability}</p>
   </div>
 </section>

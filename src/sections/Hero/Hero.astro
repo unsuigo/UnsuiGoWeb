@@ -6,7 +6,7 @@ import { hero } from '@/data/site';
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__meta">
     <p>{hero.eyebrow}</p>
-    <p>Est. 2024<br />Europe → Worldwide</p>
+    <p>Warsaw, Poland<br />Remote worldwide</p>
   </div>
 
   <div class="hero__visual">
@@ -14,20 +14,24 @@ import { hero } from '@/data/site';
   </div>
 
   <div class="hero__headline">
-    <p class="hero__kicker">PLAY / FORM</p>
+    <p class="hero__kicker">{hero.kicker}</p>
     <h1 id="hero-title">
-      We build things<br />
-      people <em>interact</em> with.
+      {hero.headlineLead}<br />
+      <em>{hero.headlineAccent}</em>
     </h1>
   </div>
 
   <div class="hero__footer">
-    <ul aria-label="Studio disciplines">
-      {hero.disciplines.map((discipline) => <li>{discipline}</li>)}
-    </ul>
-    <a class="scroll-cue" href="#work">
-      <span>{hero.scrollLabel}</span>
-      <span aria-hidden="true">↓</span>
-    </a>
+    <div class="hero__summary">
+      <p>{hero.body}</p>
+      <ul aria-label="Unity and XR technologies">
+        {hero.disciplines.map((discipline) => <li>{discipline}</li>)}
+      </ul>
+      <p class="hero__availability">{hero.availability}</p>
+    </div>
+    <div class="hero__actions">
+      <a class="scroll-cue" href="#work" aria-label={hero.scrollLabel}><span>{hero.scrollLabel}</span><span aria-hidden="true">↓</span></a>
+      <a class="hero__contact" href="#contact">Contact ↗</a>
+    </div>
   </div>
 </section>

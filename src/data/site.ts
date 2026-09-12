@@ -1,66 +1,92 @@
 export const siteSettings = {
-  name: 'PLAYFORM',
-  descriptor: 'Interactive Software Studio',
-  title: 'PLAYFORM — Interactive Software Studio',
+  name: 'UnsuiGo',
+  descriptor: 'Unity / XR Development',
+  title: 'UnsuiGo — Unity / XR Development',
   description:
-    'PLAYFORM creates games, XR experiences, interactive installations and purposeful digital products.',
-  email: 'hello@playform.studio',
-  location: 'Europe / Working worldwide',
-  social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-    { label: 'Instagram', href: 'https://www.instagram.com/' },
-  ],
+    'Independent Unity / XR development for Meta Quest, VR and AR prototypes, interactive applications and existing Unity projects.',
+  contactEmail: null as string | null,
+  contactLabel: 'CONTACT EMAIL PLACEHOLDER',
+  location: 'Warsaw, Poland / Remote worldwide',
+  social: [] as { label: string; href: string }[],
 } as const;
 
 export const navigation = [
   { label: 'Work', href: '/#work' },
   { label: 'Services', href: '/#services' },
-  { label: 'Studio', href: '/#studio' },
+  { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ] as const;
 
 export const hero = {
-  eyebrow: 'Independent interactive software studio',
-  headline: 'We build things people interact with.',
-  disciplines: ['Games', 'XR', 'Interactive experiences', 'Digital products'],
-  scrollLabel: 'Selected work',
+  eyebrow: 'Independent Unity / XR Development',
+  kicker: 'UNSUIGO / DEVELOPMENT',
+  headlineLead: 'Unity /',
+  headlineAccent: 'XR Development',
+  body: 'Building interactive applications and prototypes in Unity — from initial concept to working build.',
+  disciplines: ['VR', 'AR', 'Meta Quest', 'Interactive Prototypes', 'C#'],
+  availability: 'Available for freelance & contract projects.',
+  scrollLabel: 'View Work',
+} as const;
+
+export const technicalWork = {
+  label: 'Technical Work',
+  title: 'Systems, prototypes and experiments across Unity.',
+  intro: 'Focused technical work that demonstrates breadth without presenting every experiment as a released product.',
+} as const;
+
+export const commercialDevelopment = {
+  label: 'Commercial Unity Development',
+  title: 'Useful inside an existing codebase.',
+  body: 'Worked with existing Unity production codebases, investigating and fixing gameplay and runtime issues, debugging regressions, implementing changes and improving application stability.',
+  capabilities: [
+    'Existing codebases',
+    'Bug fixing',
+    'Debugging',
+    'Feature implementation',
+    'Runtime issues',
+    'Regression investigation',
+    'Project support',
+  ],
+  testing: ['NUnit', 'Unity Edit Mode tests', 'Unity Play Mode tests'],
 } as const;
 
 export const capabilities = [
   'Unity',
-  'Gameplay systems',
+  'C#',
+  'Meta Quest',
   'OpenXR',
-  'VR interaction',
-  'Realtime 3D',
-  'Interactive installations',
-  'Touch interfaces',
-  'Web experiences',
-  'API integration',
-  'Rapid prototyping',
+  'XR Interaction Toolkit',
+  'VR Interaction',
+  'Gameplay Systems',
+  'Rapid Prototyping',
+  'Debugging & Optimization',
+  'Multiplayer / Networking',
+  'REST API Integration',
+  'NUnit Testing & Git',
 ] as const;
 
-export const philosophy = {
-  label: 'How we think',
-  title: 'An idea is only interesting once you can interact with it.',
-  body: 'We work from first question to working experience—finding the core behavior early, proving it through prototypes, then refining every detail until the technology disappears into the experience.',
+export const about = {
+  label: 'About',
+  title: 'Independent studio. Direct technical collaboration.',
+  body: 'UnsuiGo is an independent Unity / XR development studio based in Warsaw, Poland. I work with Unity, C#, Meta Quest and interactive technologies, building prototypes and VR / AR applications while also supporting existing Unity projects.',
+  availability: 'Available for remote freelance and contract work.',
 } as const;
 
 export const process = [
-  { title: 'Discover', description: 'Define the audience, the moment and what the interaction needs to make possible.' },
-  { title: 'Prototype', description: 'Build the smallest honest version and learn from something people can actually use.' },
-  { title: 'Build', description: 'Turn the proven direction into a robust system, with craft in the code and interface.' },
-  { title: 'Refine', description: 'Tune motion, feedback, performance and the hundred details that make it feel right.' },
-  { title: 'Launch', description: 'Ship with confidence, measure the real experience and support what comes next.' },
+  { title: 'Define', description: 'Clarify the problem, target hardware and the interaction that needs to work.' },
+  { title: 'Prototype', description: 'Build a focused version early enough to test the important technical assumptions.' },
+  { title: 'Implement', description: 'Turn the validated direction into maintainable Unity and C# systems.' },
+  { title: 'Test & Support', description: 'Debug, profile and refine the build, including work inside an existing project.' },
 ] as const;
 
 export const contact = {
-  eyebrow: 'Start a project',
-  title: 'Have something interactive in mind?',
-  linkLabel: 'Let’s build it',
-  responseNote: 'Tell us what you are imagining, where it lives, and what should happen when someone touches it.',
+  eyebrow: 'Available for projects',
+  title: 'Have a Unity / XR project?',
+  linkLabel: 'Get in touch',
+  responseNote: 'Available for prototypes, existing Unity projects, VR / XR development and short-term production support.',
 } as const;
 
 export const footer = {
-  note: 'Games / XR / Experiences / Products',
-  legal: `© ${new Date().getFullYear()} PLAYFORM Studio`,
+  note: 'Unity / XR / Meta Quest / Prototypes',
+  legal: `© ${new Date().getFullYear()} UnsuiGo Studio`,
 } as const;
