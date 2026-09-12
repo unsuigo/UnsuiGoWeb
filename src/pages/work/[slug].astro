@@ -17,10 +17,11 @@ interface Props { project: CollectionEntry<'projects'>; }
 const { project } = Astro.props;
 const { Content } = await render(project);
 const base = import.meta.env.BASE_URL;
+const isPlanned = project.data.status.toLowerCase().includes('planned');
 ---
 
 <BaseLayout
-  title={`${project.data.title} — PLAYFORM Work`}
+  title={`${project.data.title} — UnsuiGo Work`}
   description={project.data.description}
   image={null}
 >
@@ -28,30 +29,53 @@ const base = import.meta.env.BASE_URL;
     <header class="detail-hero detail-hero--project">
       <div class="detail-hero__topline">
         <a href={`${base}work/`}>← All work</a>
-        <p>{project.data.year} / {project.data.client}</p>
+        <p>{project.data.status} / {project.data.type}</p>
       </div>
       <h1>{project.data.title}</h1>
       <p class="detail-hero__lead">{project.data.description}</p>
     </header>
 
     <div class="case-visual">
-      <ProjectVisual visual={project.data.visual} tone={project.data.tone} title={project.data.title} index="PLAYFORM / WORK" />
+      <ProjectVisual
+        visual={project.data.visual}
+        tone={project.data.tone}
+        title={project.data.title}
+        index="UNSUIGO / WORK"
+        media={project.data.heroMedia}
+        placeholderKind={project.data.placeholderKind}
+        mediaAspect={project.data.mediaAspect}
+      />
     </div>
 
     <div class="case-body section-pad">
       <div class="case-body__copy"><Content /></div>
       <dl>
-        <div><dt>Client</dt><dd>{project.data.client}</dd></div>
-        <div><dt>Services</dt><dd>{project.data.services.join(' / ')}</dd></div>
+        <div><dt>Type</dt><dd>{project.data.type}</dd></div>
+        <div><dt>Status</dt><dd>{project.data.status}</dd></div>
+        <div><dt>Focus</dt><dd>{project.data.services.join(' / ')}</dd></div>
         <div><dt>Technology</dt><dd>{project.data.technologies.join(' / ')}</dd></div>
-        <div><dt>Year</dt><dd>{project.data.year}</dd></div>
       </dl>
     </div>
 
+    <section class="case-details section-pad" aria-label={`${project.data.title} project details`}>
+      <div>
+        <p class="eyebrow">{isPlanned ? 'Planned interaction loop' : 'What I built'}</p>
+        <ul class="detail-list">
+          {project.data.highlights.map((item, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">{isPlanned ? 'Planned technical focus' : 'Technical work'}</p>
+        <ul class="detail-list">
+          {project.data.technicalWork.map((item, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
     <section class="detail-cta section-pad">
-      <p class="eyebrow">Next interaction</p>
-      <h2>Let’s make something people remember using.</h2>
-      <ArrowLink href={`${base}#contact`} label="Start a project" />
+      <p class="eyebrow">Unity / XR support</p>
+      <h2>Need help with a prototype or existing Unity project?</h2>
+      <ArrowLink href={`${base}#contact`} label="Get in touch" />
     </section>
   </article>
   <Footer />

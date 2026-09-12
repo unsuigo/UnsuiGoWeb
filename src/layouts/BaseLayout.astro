@@ -12,7 +12,7 @@ interface Props {
 const {
   title = siteSettings.title,
   description = siteSettings.description,
-  image = `${import.meta.env.BASE_URL}og.png`,
+  image = null,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);

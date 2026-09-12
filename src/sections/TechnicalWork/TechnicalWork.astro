@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MediaPlaceholder from '@/components/ui/MediaPlaceholder.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { technicalWork } from '@/data/site';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="technical-work section-pad" aria-labelledby="technical-work-title">
+  <SectionHeading index="03" label={technicalWork.label} title={technicalWork.title} headingId="technical-work-title" />
+  <p class="technical-work__intro" data-reveal>{technicalWork.intro}</p>
+
+  <div class="technical-grid">
+    {projects.map((project, index) => (
+      <article class:list={['technical-card', { 'technical-card--portrait': project.data.mediaAspect === 'portrait' }]} data-reveal>
+        <a href={`${base}work/${project.data.slug}/`} aria-label={`View ${project.data.title} technical project`}>
+          <div class="technical-card__media">
+            {project.data.heroMedia ? (
+              <video muted loop playsinline preload="metadata" aria-hidden="true" data-project-video>
+                <source src={`${base}${project.data.heroMedia.replace(/^\//, '')}`} type="video/mp4" />
+              </video>
+            ) : project.data.placeholderKind ? (
+              <MediaPlaceholder kind={project.data.placeholderKind} title={project.data.title} aspect={project.data.mediaAspect} />
+            ) : null}
+            <span class="technical-card__index" aria-hidden="true">UG/T{String(index + 1).padStart(2, '0')}</span>
+          </div>
+          <div class="technical-card__body">
+            <p>{project.data.type}</p>
+            <h3>{project.data.title}</h3>
+            <p>{project.data.description}</p>
+            <ul aria-label={`${project.data.title} technologies`}>
+              {project.data.services.map((service) => <li>{service}</li>)}
+            </ul>
+          </div>
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

@@ -3,16 +3,23 @@ import { contact, siteSettings } from '@/data/site';
 ---
 
 <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
-  <p class="eyebrow">07 / {contact.eyebrow}</p>
+  <p class="eyebrow">09 / {contact.eyebrow}</p>
   <div class="contact-section__body" data-reveal>
     <h2 id="contact-title">{contact.title}</h2>
-    <a href={`mailto:${siteSettings.email}`}>
-      <span>{contact.linkLabel}</span>
-      <span aria-hidden="true">↗</span>
-    </a>
+    {siteSettings.contactEmail ? (
+      <a href={`mailto:${siteSettings.contactEmail}`}>
+        <span>{contact.linkLabel}</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    ) : (
+      <span class="contact-section__placeholder" aria-label="Contact email to be supplied">
+        <span>{contact.linkLabel}</span>
+        <span aria-hidden="true">+</span>
+      </span>
+    )}
   </div>
   <div class="contact-section__note">
     <p>{contact.responseNote}</p>
-    <p>{siteSettings.email}<br />{siteSettings.location}</p>
+    <p>{siteSettings.contactEmail ?? siteSettings.contactLabel}<br />{siteSettings.location}</p>
   </div>
 </section>

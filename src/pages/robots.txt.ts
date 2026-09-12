@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = ({ site }) => {
-  const origin = site ?? new URL('https://playform.studio');
+  const origin = site ?? new URL('https://unsuigo.com');
   const sitemap = new URL(`${import.meta.env.BASE_URL}sitemap-index.xml`, origin);
 
   return new Response(`User-agent: *\nAllow: /\n\nSitemap: ${sitemap.href}\n`, {

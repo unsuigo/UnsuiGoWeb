@@ -9,13 +9,13 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Work — PLAYFORM Interactive Software Studio"
-  description="Selected games, XR experiences, installations and digital products by PLAYFORM."
+  title="Work — UnsuiGo Unity / XR Development"
+  description="Finished Meta Quest projects and Unity, XR, AR and interactive-systems prototypes by UnsuiGo."
 >
   <header class="page-hero page-hero--work">
-    <p class="eyebrow">Selected work</p>
-    <h1>Ideas made<br /><em>interactive.</em></h1>
-    <p class="page-hero__intro">A growing collection of prototypes, products and experiences made to be used—not just looked at.</p>
+    <p class="eyebrow">Unity / XR work</p>
+    <h1>Working builds.<br /><em>Technical range.</em></h1>
+    <p class="page-hero__intro">Finished Quest projects, interaction prototypes and technical Unity systems—clearly labeled by their current status.</p>
   </header>
 
   <section class="work-index section-pad" aria-label="Project archive">
@@ -26,12 +26,15 @@ const base = import.meta.env.BASE_URL;
             visual={project.data.visual}
             tone={project.data.tone}
             title={project.data.title}
-            index={`PF/0${index + 1}`}
+            index={`UG/${String(index + 1).padStart(2, '0')}`}
+            media={project.data.heroMedia}
+            placeholderKind={project.data.placeholderKind}
+            mediaAspect={project.data.mediaAspect}
           />
           <div class="work-index__meta">
             <span>0{index + 1}</span>
             <h2>{project.data.title}</h2>
-            <p>{project.data.description}</p>
+            <p><strong>{project.data.type}</strong><br />{project.data.description}</p>
             <span aria-hidden="true">↗</span>
           </div>
         </a>

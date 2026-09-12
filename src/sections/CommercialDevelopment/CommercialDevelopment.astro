@@ -1,0 +1,25 @@
+---
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { commercialDevelopment } from '@/data/site';
+---
+
+<section class="commercial-section section-pad" aria-labelledby="commercial-title">
+  <SectionHeading index="04" label={commercialDevelopment.label} title={commercialDevelopment.title} tone="light" headingId="commercial-title" />
+  <div class="commercial-layout">
+    <p class="commercial-layout__lead" data-reveal>{commercialDevelopment.body}</p>
+    <div class="commercial-layout__lists">
+      <div data-reveal>
+        <p class="eyebrow">Project support</p>
+        <ul>
+          {commercialDevelopment.capabilities.map((capability) => <li>{capability}</li>)}
+        </ul>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Testing</p>
+        <ul>
+          {commercialDevelopment.testing.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
