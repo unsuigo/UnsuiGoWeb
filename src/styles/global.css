@@ -253,11 +253,13 @@
   .project-visual--placeholder .project-visual__grid { opacity: 0.08; }
   .project-visual--placeholder .project-visual__word { opacity: 0.13; }
   .project-visual__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-slow) var(--ease-out); }
+  .project-visual--portrait-media .project-visual__video { inset: 5% auto; left: 50%; width: auto; height: 90%; aspect-ratio: 9 / 16; transform: translateX(-50%); border: 1px solid rgba(241,239,232,0.42); border-radius: 1.5rem; background: #0d0d0c; box-shadow: 0 0 0 0.45rem rgba(241,239,232,0.08); }
   .project-visual__grid { position: absolute; inset: 0; opacity: 0.24; background-image: linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px); background-size: clamp(2rem, 5vw, 6rem) clamp(2rem, 5vw, 6rem); }
   .project-visual__shape { position: absolute; display: block; border: 1px solid currentColor; transition: transform var(--duration-slow) var(--ease-out); }
   .project-visual__index { position: absolute; z-index: 2; top: var(--space-4); left: var(--space-4); font-size: 0.63rem; letter-spacing: 0.1em; }
   .project-visual__word { position: absolute; z-index: 2; left: 3.5%; bottom: 0.5%; font-size: clamp(3rem, 11vw, 13rem); font-weight: 700; letter-spacing: -0.085em; line-height: 0.84; white-space: nowrap; transition: letter-spacing var(--duration-slow) var(--ease-out); }
   .work-item:hover .project-visual__video { transform: scale(1.015); }
+  .work-item:hover .project-visual--portrait-media .project-visual__video { transform: translateX(-50%) scale(1.015); }
 
   .media-placeholder { position: relative; width: 100%; height: 100%; padding: clamp(1rem, 2.2vw, 2rem); background: #171716; color: var(--color-paper); }
   .media-placeholder__frame { position: relative; display: grid; align-content: space-between; width: 100%; height: 100%; padding: clamp(1rem, 2vw, 1.75rem); overflow: hidden; border: 1px solid rgba(241,239,232,0.42); }
@@ -293,6 +295,7 @@
   .technical-card__media { position: relative; aspect-ratio: 16 / 10; margin-bottom: var(--space-3); overflow: hidden; background: #171716; }
   .technical-card__media > .media-placeholder { position: absolute; inset: 0; }
   .technical-card__media > video { width: 100%; height: 100%; object-fit: cover; }
+  .technical-card--portrait .technical-card__media > video { position: absolute; inset: 5% auto; left: 50%; width: auto; height: 90%; aspect-ratio: 9 / 16; transform: translateX(-50%); border: 1px solid rgba(241,239,232,0.42); border-radius: 1.5rem; background: #0d0d0c; box-shadow: 0 0 0 0.45rem rgba(241,239,232,0.08); }
   .technical-card__index { position: absolute; z-index: 3; top: var(--space-3); right: var(--space-3); color: var(--color-paper); font-size: 0.58rem; letter-spacing: 0.1em; }
   .technical-card__body { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--gutter); padding-top: var(--space-3); border-top: var(--border); }
   .technical-card__body > p:first-child { grid-column: 1 / 3; color: var(--color-signal); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; }
