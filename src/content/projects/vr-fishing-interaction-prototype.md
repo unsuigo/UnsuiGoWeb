@@ -3,7 +3,7 @@ id: project-vr-fishing-interaction-prototype
 slug: vr-fishing-interaction-prototype
 title: VR Fishing Interaction Prototype
 type: VR Interaction Prototype
-status: Planned prototype — portfolio media pending
+status: VR interaction prototype — video available
 section: selected
 description: A planned tactile VR interaction demo exploring grabbing, casting, line tension and reeling as one readable physics-driven gameplay loop.
 services:
@@ -27,7 +27,7 @@ technicalWork:
   - Planned controller and hand-pose interactions
   - Planned physics-driven line and object response
   - Planned tactile gameplay feedback loop
-placeholderKind: VIDEO PLACEHOLDER
+heroMedia: /video/fishing_vr.mp4
 mediaAspect: landscape
 gallery: []
 featured: true
@@ -36,4 +36,4 @@ visual: orbit
 tone: paper
 ---
 
-This portfolio demo is planned and its media is not ready yet. The intended interaction loop is: grab fishing rod → cast → bite → line tension → reel or pull → fish out.
+The intended interaction loop is: grab fishing rod → cast → bite → line tension → reel or pull → fish out.
