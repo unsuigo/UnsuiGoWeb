@@ -3,7 +3,7 @@ id: project-mobile-ar-prototype
 slug: mobile-ar-prototype
 title: Mobile AR Prototype
 type: Mobile AR Prototype
-status: Prototype — portfolio media pending
+status: Prototype
 section: technical
 description: A mobile augmented-reality prototype exploring AR interaction and real-world overlays in Unity.
 services:
@@ -23,7 +23,7 @@ technicalWork:
   - Unity implementation
   - Mobile interaction prototyping
   - AR presentation and feedback
-placeholderKind: VIDEO PLACEHOLDER
+heroMedia: /video/Ramzy_AR_mob.mp4
 mediaAspect: portrait
 gallery: []
 featured: false
