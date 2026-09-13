@@ -3,9 +3,9 @@ id: project-vr-fishing-interaction-prototype
 slug: vr-fishing-interaction-prototype
 title: VR Fishing Interaction Prototype
 type: VR Interaction Prototype
-status: VR interaction prototype — video available
+status: VR interaction prototype
 section: selected
-description: A planned tactile VR interaction demo exploring grabbing, casting, line tension and reeling as one readable physics-driven gameplay loop.
+description: A focused VR interaction prototype exploring grabbing, casting, line tension, reeling and physics-driven object interaction in Unity.
 services:
   - UNITY
   - OPENXR
@@ -19,14 +19,13 @@ technologies:
   - VR Interaction
   - Physics
 highlights:
-  - Grab fishing rod
-  - Cast and detect a bite
-  - Read line tension
-  - Reel or pull and bring the fish out
+  - Fishing-rod grabbing and direct interaction
+  - Casting, bite detection and line tension
+  - Reeling and physics-driven object response
 technicalWork:
-  - Planned controller and hand-pose interactions
-  - Planned physics-driven line and object response
-  - Planned tactile gameplay feedback loop
+  - OpenXR and XR Interaction Toolkit integration
+  - Controller-driven grabbing and interaction design
+  - Physics-driven line behavior and tactile gameplay feedback
 heroMedia: /video/fishing_vr.mp4
 mediaAspect: landscape
 gallery: []
@@ -36,4 +35,4 @@ visual: orbit
 tone: paper
 ---
 
-The intended interaction loop is: grab fishing rod → cast → bite → line tension → reel or pull → fish out.
+The prototype brings grabbing, casting, bite feedback, line tension and reeling together as one focused VR interaction loop.

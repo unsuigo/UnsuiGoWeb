@@ -5,7 +5,7 @@ export const siteSettings = {
   description:
     'Independent Unity / XR development for Meta Quest, VR and AR prototypes, interactive applications and existing Unity projects.',
   contactEmail: null as string | null,
-  contactLabel: 'CONTACT EMAIL PLACEHOLDER',
+  contactLabel: 'Freelance / contract enquiries welcome',
   location: 'Warsaw, Poland / Remote worldwide',
   social: [] as { label: string; href: string }[],
 } as const;
@@ -29,9 +29,9 @@ export const hero = {
 } as const;
 
 export const technicalWork = {
-  label: 'Technical Work',
-  title: 'Systems, prototypes and experiments across Unity.',
-  intro: 'Focused technical work that demonstrates breadth without presenting every experiment as a released product.',
+  label: 'Technical range',
+  title: 'Additional Technical Experience',
+  intro: 'Hands-on work across Unity systems, XR interaction, networking, integrations and gameplay architecture.',
 } as const;
 
 export const commercialDevelopment = {
@@ -57,12 +57,13 @@ export const capabilities = [
   'OpenXR',
   'XR Interaction Toolkit',
   'VR Interaction',
+  'AR',
   'Gameplay Systems',
   'Rapid Prototyping',
   'Debugging & Optimization',
   'Multiplayer / Networking',
   'REST API Integration',
-  'NUnit Testing & Git',
+  'NUnit / Git',
 ] as const;
 
 export const about = {
@@ -82,7 +83,7 @@ export const process = [
 export const contact = {
   eyebrow: 'Available for projects',
   title: 'Have a Unity / XR project?',
-  linkLabel: 'Get in touch',
+  linkLabel: 'Open to new projects',
   responseNote: 'Available for prototypes, existing Unity projects, VR / XR development and short-term production support.',
 } as const;
 

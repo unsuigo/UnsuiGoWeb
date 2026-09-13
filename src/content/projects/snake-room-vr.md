@@ -3,9 +3,9 @@ id: project-snake-room-vr
 slug: snake-room-vr
 title: Snake Room VR
 type: Meta Quest VR Game
-status: Finished Quest VR project
+status: Finished Meta Quest VR project
 section: selected
-description: A finished standalone Quest project that brings the classic snake mechanic into an immersive 3D space through VR locomotion, player interaction and responsive Unity gameplay.
+description: A finished standalone Meta Quest VR game that brings the classic snake mechanic into an immersive 3D space through locomotion, player interaction and responsive Unity gameplay.
 services:
   - UNITY
   - C#

@@ -33,7 +33,6 @@ const projects = defineCollection({
     highlights: z.array(z.string()).default([]),
     technicalWork: z.array(z.string()).default([]),
     heroMedia: z.string().optional(),
-    placeholderKind: z.enum(['VIDEO PLACEHOLDER', 'IMAGE PLACEHOLDER', 'IMAGE / VIDEO PLACEHOLDER']).optional(),
     mediaAspect: z.enum(['landscape', 'portrait']).default('landscape'),
     gallery: z.array(z.string()).default([]),
     featured: z.boolean().default(false),

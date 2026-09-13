@@ -4,18 +4,19 @@ import Footer from '@/components/navigation/Footer.astro';
 import ProjectVisual from '@/components/ui/ProjectVisual.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection('projects', ({ data }) => data.featured && Boolean(data.heroMedia)))
+  .sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="Work — UnsuiGo Unity / XR Development"
-  description="Finished Meta Quest projects and Unity, XR, AR and interactive-systems prototypes by UnsuiGo."
+  description="Four Unity, VR and AR projects with real working media by UnsuiGo."
 >
   <header class="page-hero page-hero--work">
     <p class="eyebrow">Unity / XR work</p>
     <h1>Working builds.<br /><em>Technical range.</em></h1>
-    <p class="page-hero__intro">Finished Quest projects, interaction prototypes and technical Unity systems—clearly labeled by their current status.</p>
+    <p class="page-hero__intro">Finished Meta Quest work and focused VR and mobile AR prototypes, each shown with real project media.</p>
   </header>
 
   <section class="work-index section-pad" aria-label="Project archive">
@@ -28,7 +29,6 @@ const base = import.meta.env.BASE_URL;
             title={project.data.title}
             index={`UG/${String(index + 1).padStart(2, '0')}`}
             media={project.data.heroMedia}
-            placeholderKind={project.data.placeholderKind}
             mediaAspect={project.data.mediaAspect}
           />
           <div class="work-index__meta">

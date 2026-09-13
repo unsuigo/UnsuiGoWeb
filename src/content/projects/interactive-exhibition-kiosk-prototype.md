@@ -1,11 +1,11 @@
 ---
 id: project-interactive-exhibition-kiosk-prototype
 slug: interactive-exhibition-kiosk-prototype
-title: Interactive Exhibition / Kiosk Prototype
-type: Interactive System Prototype
-status: Technical prototype — portfolio media pending
+title: Interactive Kiosk / Exhibition Systems
+type: Technical Experience
+status: Prototype and integration experience
 section: technical
-description: A Unity-based Windows kiosk concept combining touchscreen interaction, webcam and QR input, REST API communication and external-system integration.
+description: Prototype work on Unity-based Windows kiosk and exhibition systems combining touchscreen UI, webcam and QR input, REST API communication and external-system integration.
 services:
   - UNITY
   - WINDOWS
@@ -26,8 +26,6 @@ technicalWork:
   - REST API communication
   - External system and hardware integration
   - Windows kiosk application architecture
-placeholderKind: IMAGE / VIDEO PLACEHOLDER
-mediaAspect: landscape
 gallery: []
 featured: false
 order: 7
