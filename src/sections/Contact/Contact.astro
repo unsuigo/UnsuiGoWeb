@@ -1,14 +1,17 @@
 ---
 import { contact, siteSettings } from '@/data/site';
+
+const phoneHref = siteSettings.contactPhone?.replace(/[^\d+]/g, '');
+const [location, remoteAvailability] = siteSettings.location.split(' / ');
 ---
 
 <section class="contact-section section-pad" id="contact" aria-labelledby="contact-title">
-  <p class="eyebrow">09 / {contact.eyebrow}</p>
+  <p class="eyebrow">07 / {contact.eyebrow}</p>
   <div class="contact-section__body" data-reveal>
     <h2 id="contact-title">{contact.title}</h2>
     {siteSettings.contactEmail ? (
-      <a href={`mailto:${siteSettings.contactEmail}`}>
-        <span>{contact.linkLabel}</span>
+      <a class="contact-section__primary" href={`mailto:${siteSettings.contactEmail}`}>
+        <span><small>Email</small>{siteSettings.contactEmail}</span>
         <span aria-hidden="true">↗</span>
       </a>
     ) : (
@@ -20,6 +23,20 @@ import { contact, siteSettings } from '@/data/site';
   </div>
   <div class="contact-section__note">
     <p>{contact.responseNote}</p>
-    <p>{siteSettings.contactEmail ?? siteSettings.contactLabel}<br />{siteSettings.location}</p>
+    <div class="contact-section__methods">
+      {siteSettings.contactPhone && (
+        <a class="contact-section__method" href={`tel:${phoneHref}`}>
+          <span>Phone</span>
+          <strong>{siteSettings.contactPhone}</strong>
+        </a>
+      )}
+      {siteSettings.social.map((item) => (
+        <a class="contact-section__method" href={item.href} target="_blank" rel="noreferrer">
+          <span>{item.label}</span>
+          <strong>Visit ↗</strong>
+        </a>
+      ))}
+      <p>{location}<br />{remoteAvailability}</p>
+    </div>
   </div>
 </section>

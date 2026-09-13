@@ -328,6 +328,7 @@
   .philosophy-section__content h2 { max-width: 11ch; margin-bottom: var(--space-5); font-size: clamp(2.8rem, 5vw, 6rem); font-weight: 500; letter-spacing: -0.065em; line-height: 0.93; }
   .philosophy-section__content > p:not(.eyebrow) { max-width: 36rem; color: var(--color-muted); font-size: clamp(1rem, 1.4vw, 1.35rem); }
   .philosophy-section__content .philosophy-section__availability { margin-top: var(--space-4); color: var(--color-paper); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .philosophy-section__content .philosophy-section__technologies { margin-top: var(--space-5); padding-top: var(--space-3); border-top: var(--border); color: var(--color-muted); font-size: 0.68rem; line-height: 1.7; letter-spacing: 0.06em; text-transform: uppercase; }
 
   .process-section { background: #151514; }
   .process-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: var(--border); border-bottom: var(--border); }
@@ -341,21 +342,26 @@
   .contact-section > .eyebrow { margin-bottom: clamp(4rem, 8vw, 8rem); }
   .contact-section__body { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gutter); align-items: end; padding-bottom: clamp(4rem, 8vw, 8rem); }
   .contact-section__body h2 { max-width: 11ch; font-size: clamp(3.7rem, 8.5vw, 10rem); font-weight: 500; letter-spacing: -0.08em; line-height: 0.84; }
-  .contact-section__body :is(a, .contact-section__status) { display: grid; place-items: center; width: clamp(9rem, 16vw, 15rem); aspect-ratio: 1; border: 1px solid var(--color-ink); border-radius: 50%; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-align: center; text-transform: uppercase; transition: color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast); }
-  .contact-section__body :is(a, .contact-section__status) span:last-child { font-size: 1.5rem; }
-  .contact-section__body a:hover { background: var(--color-ink); color: var(--color-signal); transform: rotate(-5deg); }
+  .contact-section__status { display: grid; place-items: center; width: clamp(9rem, 16vw, 15rem); aspect-ratio: 1; border: 1px solid var(--color-ink); border-radius: 50%; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-align: center; text-transform: uppercase; }
+  .contact-section__status span:last-child { font-size: 1.5rem; }
+  .contact-section__primary { display: flex; gap: var(--space-3); justify-content: space-between; align-items: end; width: min(38rem, 42vw); padding: var(--space-3) 0; border-top: 1px solid var(--color-ink); border-bottom: 1px solid var(--color-ink); font-size: clamp(1rem, 2vw, 2rem); font-weight: 500; letter-spacing: -0.035em; overflow-wrap: anywhere; transition: padding var(--duration-fast); }
+  .contact-section__primary small { display: block; margin-bottom: 0.45rem; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .contact-section__primary:hover { padding-inline: 0.5rem; }
   .contact-section__note { display: grid; grid-template-columns: 1fr auto; gap: var(--gutter); padding-top: var(--space-4); border-top: 1px solid rgba(13,13,12,0.5); font-size: 0.73rem; }
   .contact-section__note p:first-child { max-width: 35rem; }
-  .contact-section__note p:last-child { text-align: right; }
+  .contact-section__methods { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: flex-end; text-align: right; }
+  .contact-section__method { display: grid; gap: 0.35rem; min-width: 8rem; }
+  .contact-section__method span { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .contact-section__method strong { font-weight: 500; overflow-wrap: anywhere; }
 
   .site-footer { background: var(--color-paper); color: var(--color-ink); padding: clamp(4rem, 7vw, 7rem) var(--gutter) var(--space-4); }
   .site-footer__brand { display: block; padding-bottom: clamp(3rem, 5vw, 5rem); font-size: clamp(5rem, 16.2vw, 19rem); font-weight: 700; letter-spacing: -0.09em; line-height: 0.75; white-space: nowrap; }
   .site-footer__brand span { color: var(--color-signal); font-size: 0.06em; vertical-align: top; }
-  .site-footer__columns { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: var(--gutter); padding-block: var(--space-5) clamp(4rem, 8vw, 8rem); border-top: 1px solid rgba(13,13,12,0.35); }
-  .site-footer__columns > div { display: flex; flex-direction: column; align-items: start; gap: 0.35rem; }
+  .site-footer__nav { padding-block: var(--space-4); border-top: 1px solid rgba(13,13,12,0.35); }
+  .site-footer__nav > div { display: flex; flex-wrap: wrap; gap: 0.5rem var(--space-4); }
   .site-footer__label { margin-bottom: 0.6rem; color: #77736a; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; }
-  .site-footer__columns a { font-size: 0.82rem; }
-  .site-footer__columns a:hover { color: var(--color-signal); }
+  .site-footer__nav a { font-size: 0.82rem; }
+  .site-footer__nav a:hover { color: var(--color-signal); }
   .site-footer__base { display: grid; grid-template-columns: 1fr 1fr auto; gap: var(--gutter); padding-top: var(--space-3); border-top: 1px solid rgba(13,13,12,0.35); color: #77736a; font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
   .page-hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); min-height: 82svh; max-width: var(--container); margin-inline: auto; padding: clamp(9rem, 15vw, 14rem) var(--gutter) var(--space-7); align-content: end; }
@@ -500,13 +506,12 @@
 
   .contact-section__body { display: block; }
   .contact-section__body h2 { font-size: clamp(4rem, 18vw, 6rem); }
-  .contact-section__body :is(a, .contact-section__status) { width: 9.5rem; margin: var(--space-6) 0 0 auto; }
+  .contact-section__status { width: 9.5rem; margin: var(--space-6) 0 0 auto; }
+  .contact-section__primary { width: 100%; margin-top: var(--space-5); }
   .contact-section__note { grid-template-columns: 1fr; }
-  .contact-section__note p:last-child { margin-top: var(--space-3); text-align: left; }
+  .contact-section__methods { justify-content: flex-start; margin-top: var(--space-4); text-align: left; }
 
   .site-footer__brand { padding-bottom: var(--space-6); font-size: 16.8vw; }
-  .site-footer__columns { grid-template-columns: 1fr 1fr; gap: var(--space-5); }
-  .site-footer__columns > div:last-child { grid-column: 1 / 3; }
   .site-footer__base { grid-template-columns: 1fr auto; }
   .site-footer__base p:nth-child(2) { display: none; }
 

@@ -5,7 +5,8 @@ export const siteSettings = {
   description:
     'Independent Unity / XR development for Meta Quest, VR and AR prototypes, interactive applications and existing Unity projects.',
   contactEmail: null as string | null,
-  contactLabel: 'Freelance / contract enquiries welcome',
+  contactPhone: null as string | null,
+  contactLabel: 'Open to project enquiries',
   location: 'Warsaw, Poland / Remote worldwide',
   social: [] as { label: string; href: string }[],
 } as const;
@@ -69,8 +70,9 @@ export const capabilities = [
 export const about = {
   label: 'About',
   title: 'Independent studio. Direct technical collaboration.',
-  body: 'UnsuiGo is an independent Unity / XR development studio based in Warsaw, Poland. I work with Unity, C#, Meta Quest and interactive technologies, building prototypes and VR / AR applications while also supporting existing Unity projects.',
+  body: 'UnsuiGo is an independent Unity / XR development studio based in Warsaw, Poland. I build VR / AR applications and interactive prototypes in Unity and also support existing Unity projects with debugging, feature implementation and technical development.',
   availability: 'Available for remote freelance and contract work.',
+  technologies: 'Unity · C# · Meta Quest · OpenXR · XR Interaction Toolkit · AR · Networking · REST APIs · NUnit · Git',
 } as const;
 
 export const process = [
@@ -88,6 +90,6 @@ export const contact = {
 } as const;
 
 export const footer = {
-  note: 'Unity / XR / Meta Quest / Prototypes',
+  note: 'Unity / XR Development',
   legal: `© ${new Date().getFullYear()} UnsuiGo Studio`,
 } as const;
