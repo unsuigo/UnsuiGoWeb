@@ -12,7 +12,7 @@ import { contact, siteSettings } from '@/data/site';
         <span aria-hidden="true">↗</span>
       </a>
     ) : (
-      <span class="contact-section__placeholder" aria-label="Contact email to be supplied">
+      <span class="contact-section__status" aria-label={siteSettings.contactLabel}>
         <span>{contact.linkLabel}</span>
         <span aria-hidden="true">+</span>
       </span>

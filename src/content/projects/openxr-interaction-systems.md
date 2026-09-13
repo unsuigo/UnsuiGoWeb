@@ -1,11 +1,11 @@
 ---
 id: project-openxr-interaction-systems
 slug: openxr-interaction-systems
-title: OpenXR Interaction Systems
-type: Controller-driven VR Interaction
-status: Technical systems work — portfolio media pending
+title: OpenXR / XR Interaction
+type: Technical Experience
+status: Interaction systems experience
 section: technical
-description: Controller-driven articulated hand interaction and object-specific pose systems built with OpenXR and XR Interaction Toolkit.
+description: Built and tested controller-driven articulated hand interaction, grip and pinch poses, near-grab behavior and object-specific interaction systems using OpenXR and XR Interaction Toolkit.
 services:
   - UNITY
   - OPENXR
@@ -25,8 +25,6 @@ technicalWork:
   - OpenXR controller input
   - XR Interaction Toolkit interaction flows
   - Pose and attachment systems
-placeholderKind: VIDEO PLACEHOLDER
-mediaAspect: landscape
 gallery: []
 featured: false
 order: 6

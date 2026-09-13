@@ -3,14 +3,14 @@ id: project-mobile-ar-prototype
 slug: mobile-ar-prototype
 title: Mobile AR Prototype
 type: Mobile AR Prototype
-status: Prototype
-section: technical
-description: A mobile augmented-reality prototype exploring AR interaction and real-world overlays in Unity.
+status: Mobile AR prototype
+section: selected
+description: A mobile augmented-reality prototype built in Unity, exploring character placement, real-world overlays and interactive AR presentation on a mobile device.
 services:
   - UNITY
   - AR
   - MOBILE
-  - PROTOTYPE
+  - C#
 technologies:
   - Unity
   - C#
@@ -26,10 +26,10 @@ technicalWork:
 heroMedia: /video/Ramzy_AR_mob.mp4
 mediaAspect: portrait
 gallery: []
-featured: false
+featured: true
 order: 4
 visual: field
 tone: orange
 ---
 
-A prototype study for mobile augmented reality, focused on interaction and useful overlays rather than a claimed commercial release.
+A Unity mobile AR prototype focused on character placement, real-world overlays and clear interactive presentation on a mobile device.

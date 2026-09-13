@@ -3,9 +3,9 @@ id: project-block-booster-vr
 slug: block-booster-vr
 title: Block Booster VR
 type: Meta Quest VR Game
-status: Finished Quest VR project
+status: Finished Meta Quest VR project
 section: selected
-description: A complete standalone Meta Quest project demonstrating responsive VR gameplay, direct interaction and Unity development from working mechanic to finished build.
+description: A finished standalone Meta Quest VR game with responsive gameplay, direct controller interaction and a complete Unity delivery from working mechanic to headset build.
 services:
   - UNITY
   - C#
@@ -25,7 +25,7 @@ highlights:
 technicalWork:
   - OpenXR and XR Interaction Toolkit integration
   - VR interaction and gameplay systems
-  - Standalone VR performance and optimization
+  - Standalone VR optimization and complete project delivery
 heroMedia: /video/block-booster-vr.mp4
 gallery: []
 featured: true
