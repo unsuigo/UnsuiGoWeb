@@ -24,18 +24,18 @@ const [location, remoteAvailability] = siteSettings.location.split(' / ');
   <div class="contact-section__note">
     <p>{contact.responseNote}</p>
     <div class="contact-section__methods">
+      {siteSettings.social.map((item) => (
+        <a class="contact-section__method" href={item.href} target="_blank" rel="noopener noreferrer">
+          <span>{item.label}</span>
+          <strong>{item.name} ↗</strong>
+        </a>
+      ))}
       {siteSettings.contactPhone && (
         <a class="contact-section__method" href={`tel:${phoneHref}`}>
           <span>Phone</span>
           <strong>{siteSettings.contactPhone}</strong>
         </a>
       )}
-      {siteSettings.social.map((item) => (
-        <a class="contact-section__method" href={item.href} target="_blank" rel="noreferrer">
-          <span>{item.label}</span>
-          <strong>Visit ↗</strong>
-        </a>
-      ))}
       <p>{location}<br />{remoteAvailability}</p>
     </div>
   </div>

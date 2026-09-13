@@ -4,11 +4,13 @@ export const siteSettings = {
   title: 'UnsuiGo — Unity / XR Development',
   description:
     'Independent Unity / XR development for Meta Quest, VR and AR prototypes, interactive applications and existing Unity projects.',
-  contactEmail: null as string | null,
-  contactPhone: null as string | null,
+  contactEmail: 'unsuigo@gmail.com',
+  contactPhone: '+48 881 773 371',
   contactLabel: 'Open to project enquiries',
   location: 'Warsaw, Poland / Remote worldwide',
-  social: [] as { label: string; href: string }[],
+  social: [
+    { label: 'LinkedIn', name: 'Alex Hinchuk', href: 'https://www.linkedin.com/in/alexhinchuk' },
+  ] as { label: string; name: string; href: string }[],
 } as const;
 
 export const navigation = [
@@ -25,7 +27,7 @@ export const hero = {
   headlineAccent: 'XR Development',
   body: 'Building interactive applications and prototypes in Unity — from initial concept to working build.',
   disciplines: ['VR', 'AR', 'Meta Quest', 'Interactive Prototypes', 'C#'],
-  availability: 'Available for freelance & contract projects.',
+  availability: 'Available for contract, project-based and long-term opportunities.',
   scrollLabel: 'View Work',
 } as const;
 
@@ -71,7 +73,7 @@ export const about = {
   label: 'About',
   title: 'Independent studio. Direct technical collaboration.',
   body: 'UnsuiGo is an independent Unity / XR development studio based in Warsaw, Poland. I build VR / AR applications and interactive prototypes in Unity and also support existing Unity projects with debugging, feature implementation and technical development.',
-  availability: 'Available for remote freelance and contract work.',
+  availability: 'Available for contract, project-based and long-term opportunities.',
   technologies: 'Unity · C# · Meta Quest · OpenXR · XR Interaction Toolkit · AR · Networking · REST APIs · NUnit · Git',
 } as const;
 
@@ -86,7 +88,7 @@ export const contact = {
   eyebrow: 'Available for projects',
   title: 'Have a Unity / XR project?',
   linkLabel: 'Open to new projects',
-  responseNote: 'Available for prototypes, existing Unity projects, VR / XR development and short-term production support.',
+  responseNote: 'Available for contract, project-based and long-term opportunities.',
 } as const;
 
 export const footer = {

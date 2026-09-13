@@ -1,28 +1,30 @@
 ---
 id: project-mobile-ar-prototype
 slug: mobile-ar-prototype
-title: Mobile AR Prototype
-type: Mobile AR Prototype
-status: Mobile AR prototype
+title: Ramsey AR Mob
+type: Mobile AR Game
+status: Finished project
 section: selected
-description: A mobile augmented-reality prototype built in Unity, exploring character placement, real-world overlays and interactive AR presentation on a mobile device.
+description: A finished mobile augmented-reality game built in Unity, combining real-world camera input with interactive AR characters and gameplay.
 services:
   - UNITY
-  - AR
-  - MOBILE
   - C#
+  - MOBILE AR
+  - AR INTERACTION
 technologies:
   - Unity
   - C#
   - Mobile AR
+  - AR Interaction
+  - Mobile Development
 highlights:
-  - Mobile-first AR interaction
-  - Real-world overlays
-  - Portrait-format prototype presentation
+  - Mobile AR gameplay using real-world camera input
+  - Interactive AR characters and gameplay
+  - Finished portrait-format mobile game
 technicalWork:
-  - Unity implementation
-  - Mobile interaction prototyping
-  - AR presentation and feedback
+  - Unity and C# implementation
+  - AR interaction and gameplay systems
+  - Mobile presentation and interaction feedback
 heroMedia: /video/Ramzy_AR_mob.mp4
 mediaAspect: portrait
 gallery: []
@@ -32,4 +34,4 @@ visual: field
 tone: orange
 ---
 
-A Unity mobile AR prototype focused on character placement, real-world overlays and clear interactive presentation on a mobile device.
+A finished Unity mobile AR game combining camera-based presentation, interactive AR characters and gameplay designed for a mobile device.
